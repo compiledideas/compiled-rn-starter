@@ -10,12 +10,14 @@ require('dotenv').config({
   path: envPath,
 });
 
-const BUNDLE_ID = 'com.compiledideas.almanialink';
-const PACKAGE = 'com.compiledideas.almanialink';
-const NAME = 'almanialink';
+// You should not change the following variables with your details
+
+const BUNDLE_ID = 'com.compiledideas.app';
+const PACKAGE = 'com.compiledideas.app';
+const NAME = 'compiledideas-starter';
 const EXPO_ACCOUNT_OWNER = 'compiledideas';
-const EAS_PROJECT_ID = '581ff923-5c48-4c34-af31-dd5281992f7f'; 
-const SCHEME = 'almanialink';
+const EAS_PROJECT_ID = '41996847-4ae3-49ae-96be-ec887d5ceb3a';
+const SCHEME = 'compiledideas-starter';
 
 /**
  * We declare a function withEnvSuffix that will add a suffix to the variable name based on the APP_ENV
@@ -61,7 +63,6 @@ const buildTime = z.object({
   EAS_PROJECT_ID: z.string(),
   CONVEX_DEPLOYMENT: z.string(),
   CONVEX_SITE_URL: z.string(),
-  AUTH_RESEND_KEY: z.string(),
 });
 
 /**
@@ -85,7 +86,6 @@ const _buildTimeEnv = {
   EAS_PROJECT_ID,
   CONVEX_DEPLOYMENT: process.env.CONVEX_DEPLOYMENT,
   CONVEX_SITE_URL: process.env.CONVEX_SITE_URL,
-  AUTH_RESEND_KEY: process.env.AUTH_RESEND_KEY,
 };
 
 /**
