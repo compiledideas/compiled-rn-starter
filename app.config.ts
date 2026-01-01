@@ -47,6 +47,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     config: {},
   },
   plugins: [
+    'expo-localization',
     [
       'expo-build-properties',
       {
