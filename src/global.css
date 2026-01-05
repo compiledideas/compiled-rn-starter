@@ -42,30 +42,26 @@
   --font-bold: 'AtkinsonHyperlegible-Bold';
 }
 
-@layer theme {
-  :root {
-    @variant dark {
+@variant dark {
+  @layer theme {
+    :root {
       --color-background: #000000;
       --color-foreground: #ffffff;
       --color-primary: #3b82f6;
       --color-card: #1f2937;
       --color-border: #374151;
     }
+  }
+}
 
-    @variant light {
+@variant light {
+  @layer theme {
+    :root {
       --color-background: #ffffff;
       --color-foreground: #000000;
       --color-primary: #3b82f6;
       --color-card: #ffffff;
       --color-border: #e5e7eb;
-    }
-
-    @variant premium {
-      --color-background: #1e1b4b;
-      --color-foreground: #fef3c7;
-      --color-primary: #fbbf24;
-      --color-card: #312e81;
-      --color-border: #4c1d95;
     }
   }
 }
