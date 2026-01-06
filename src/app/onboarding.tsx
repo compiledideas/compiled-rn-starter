@@ -10,15 +10,17 @@ export default function Onboarding() {
   const { height } = useWindowDimensions();
 
   return (
-    <RootWrapper className="container">
-      <View className="items-center justify-end py-4" style={{ height }}>
+    <RootWrapper className="border">
+      <View
+        className="w-full items-center justify-end py-20"
+        style={{ height }}>
         <Image
           source={require('@/assets/images/onboarding.png')}
-          className="absolute top-[20%] w-full"
+          className="absolute top-[16%] w-full"
           resizeMode="contain"
         />
         <View className="gap-2">
-          <Text className="text-center text-xl font-bold text-tertiary">
+          <Text className="text-tertiary text-center text-xl font-bold">
             Find German Jobs That Fit You
           </Text>
           <Text className="text-center text-sm">
