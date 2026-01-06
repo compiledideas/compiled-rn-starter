@@ -10,7 +10,7 @@ export default function Onboarding() {
   const { height } = useWindowDimensions();
 
   return (
-    <RootWrapper className="border">
+    <RootWrapper className="px-3">
       <View
         className="w-full items-center justify-end py-20"
         style={{ height }}>

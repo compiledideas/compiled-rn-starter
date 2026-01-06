@@ -43,10 +43,8 @@ const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
 export default function RootLayout() {
   return (
     <Providers>
-      <Stack
-        initialRouteName="(app)/index"
-        screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(app)/index" />
+      <Stack initialRouteName="(app)" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(app)" />
         <Stack.Screen name="onboarding" />
         <Stack.Screen name="(auth)" />
       </Stack>

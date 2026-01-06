@@ -4,7 +4,7 @@ import { I18nManager, StyleSheet, Text as NNText } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
 import type { TxKeyPath } from '@/lib/i18n';
-import { translate } from '@/lib/i18n';
+import { translate, useSelectedLanguage } from '@/lib/i18n';
 
 interface Props extends TextProps {
   className?: string;
@@ -18,13 +18,15 @@ export const Text = ({
   children,
   ...props
 }: Props) => {
+  const { language } = useSelectedLanguage();
   const textStyle = React.useMemo(
     () =>
       twMerge(
-        'text-sm text-black dark:text-white  font-sf font-normale',
+        'text-sm text-black dark:text-white font-normal',
+        language === 'ar' ? 'font-arabic' : 'font-normal',
         className,
       ),
-    [className],
+    [className, language],
   );
 
   const nStyle = React.useMemo(
@@ -32,7 +34,6 @@ export const Text = ({
       StyleSheet.flatten([
         {
           writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
-          fontFamily: 'AtkinsonHyperlegible',
         },
         style,
       ]) as TextStyle,
