@@ -19,10 +19,10 @@ export default function Login() {
   const form = useForm();
 
   return (
-    <RootWrapper className="mb-7 flex-1 justify-end">
+    <RootWrapper className="flex-1 px-3">
       <KeyboardAvoidingView
         behavior="padding"
-        className="container mb-3 rounded-2xl bg-backgroundSecondary p-2 dark:bg-backgroundSecondaryDark">
+        className="bg-backgroundSecondary dark:bg-backgroundSecondaryDark mb-3 rounded-2xl p-2">
         <Text className="text-center text-xl font-medium">Welcome back!</Text>
         <FormContext value={form}>
           <FieldInput

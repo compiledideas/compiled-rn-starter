@@ -2,7 +2,6 @@ import '../global.css';
 
 import { ConvexReactClient } from 'convex/react';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import React from 'react';
@@ -14,6 +13,8 @@ import { ConvexAuthProvider } from '@convex-dev/auth/react';
 import * as SecureStore from 'expo-secure-store';
 import { Toaster } from '../lib/taost/sonner';
 import { loadSelectedTheme, useThemeConfig } from '@/lib';
+import { SafeAreaListener } from 'react-native-safe-area-context';
+import { Uniwind } from 'uniwind';
 
 const secureStorage = {
   getItem: SecureStore.getItemAsync,
@@ -42,10 +43,8 @@ const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
 export default function RootLayout() {
   return (
     <Providers>
-      <Stack
-        initialRouteName="(app)/index"
-        screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(app)/index" />
+      <Stack initialRouteName="(app)" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(app)" />
         <Stack.Screen name="onboarding" />
         <Stack.Screen name="(auth)" />
       </Stack>
@@ -67,12 +66,15 @@ function Providers({ children }: { children: React.ReactNode }) {
             : undefined
         }>
         <KeyboardProvider>
-          <ThemeProvider value={theme}>
+          <SafeAreaListener
+            onChange={({ insets }) => {
+              Uniwind.updateInsets(insets);
+            }}>
             <BottomSheetModalProvider>
               {children}
               <Toaster position="bottom-center" />
             </BottomSheetModalProvider>
-          </ThemeProvider>
+          </SafeAreaListener>
         </KeyboardProvider>
       </ConvexAuthProvider>
     </GestureHandlerRootView>

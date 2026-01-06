@@ -60,7 +60,13 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       'expo-font',
       {
-        fonts: ['./assets/fonts/AtkinsonHyperlegible-Regular.ttf'],
+        fonts: [
+          './assets/fonts/AtkinsonHyperlegible-Regular.ttf',
+          './assets/fonts/AtkinsonHyperlegible-Bold.ttf',
+          './assets/fonts/Cairo-Light.ttf',
+          './assets/fonts/Cairo-Regular.ttf',
+          './assets/fonts/Cairo-Medium.ttf',
+        ],
       },
     ],
     [

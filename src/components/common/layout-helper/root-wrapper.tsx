@@ -10,7 +10,7 @@ export function RootWrapper({
   className?: string;
 }) {
   return (
-    <View className="flex-1 overflow-y-scroll bg-background dark:bg-backgroundDark">
+    <View className="bg-background dark:bg-backgroundDark flex-1 overflow-y-scroll">
       <View className={cn('ios:pt-16 android:pt-10 pt-5', className)}>
         {children}
       </View>

@@ -1,12 +1,12 @@
 import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
-import { Header, RootWrapper } from '@/components';
+import { Header, HeaderWithGoBack, RootWrapper } from '@/components';
 
 export default function Signup() {
   return (
-    <RootWrapper>
-      <ScrollView className="container">
-        <Header />
+    <RootWrapper className="px-3">
+      <ScrollView className="">
+        <HeaderWithGoBack />
         <Text>Sign Up</Text>
       </ScrollView>
     </RootWrapper>

@@ -5,7 +5,7 @@ import { Header, HeaderWithGoBack, RootWrapper } from '@/components';
 export default function Article() {
   return (
     <RootWrapper>
-      <HeaderWithGoBack />
+      <Header />
       <Text>Article</Text>
     </RootWrapper>
   );
